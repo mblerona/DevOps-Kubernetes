@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: emqx-config
+data:
+  EMQX_NAME: emqx
+  EMQX_CLUSTER__DISCOVERY_STRATEGY: static
+  EMQX_CLUSTER__STATIC__SEEDS: emqx@emqx-0.emqx-headless,emqx@emqx-1.emqx-headless,emqx@emqx-2.emqx-headless

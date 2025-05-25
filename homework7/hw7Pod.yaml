@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-static
+  labels:
+    run: nginx-static
+spec:
+  containers:
+  - name: nginx
+    image: rona03/nginx-static:v1
+    ports:
+    - containerPort: 80

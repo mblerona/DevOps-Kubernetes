@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: h8-deployment
+spec:
+  replicas: 5
+  strategy:
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: h8-app
+  template:
+    metadata:
+      labels:
+        app: h8-app
+    spec:
+      containers:
+      - name: h8-container
+        image: rona03/homework8image:2.0
+        ports:
+        - containerPort: 80
